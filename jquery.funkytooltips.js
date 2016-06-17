@@ -134,8 +134,8 @@
          deltaX: 15,
          deltaY: 15,
          displayLocation: true,
-         displayMethod: "basic",
-         locationLength: 30
+         locationLength: 30,
+         displayMethod: "basic"
       };
 
       conf && $.extend(settings, conf);

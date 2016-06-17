@@ -34,6 +34,8 @@ The tooltips behaviour can be configured passing to the plugin the following bit
 - `cssClass (String)`: the css class to apply to the tooltip element. By default this is `funky-tt` (defined in `jquery.funkytooltips.css`)
 - `deltaX and deltaX (Number)`: the offset in px from the cursor position (default `15`)
 - `displayLocation (Boolean)`: whether or not to display the location of the tooltipped resource (`href` in case of `<a/>` and `src` in case of `<img/>`) (default `true`)
+- `locationLength (Number)`: when to truncate the location (default: `30` characters)
+- `displayMethod (String)`: what displacement strategy to use (defaul: `basic`). Other possible values are `fadeIn` and `slideDown`
 
 ### HTML structure
 
