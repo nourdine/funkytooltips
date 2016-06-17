@@ -51,4 +51,3 @@ In case you wanted to style the tooltip youself, it's useful to bear in mind its
 ### Demo
 
 See `demo/index.html` for a practical examples of how to use the plugin.
-
