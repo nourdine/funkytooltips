@@ -1,5 +1,11 @@
 # funkytooltips
 
+### Installation
+
+Include `jquery.js`, `jquery.funkytooltips.js` and `jquery.funkytooltips.css` (for basic styling). 
+
+### Quickstart
+
 This jQuery plugin lets you add tooltips to your markup with just one line (or so) of code.
 
 ```js
@@ -14,7 +20,7 @@ A tooltip will now display when hovering the following tags contained in `.my-te
 - `img`
 - `acronym`
 
-What the each tooltip will display depends on the tag considered:
+What each tooltip will display depends on the tag considered:
 
 - `a`: the `title` and the `href` attribute
 - `img`: the `alt` and the `src` attribute
@@ -22,7 +28,13 @@ What the each tooltip will display depends on the tag considered:
 
 ### Config
 
+The tooltips behaviour can be configured passing to the plugin the following bits of information:
+
+- `delay` (Number): how many milliseconds before the tooltip appears when the a certain tag is hovered (default 300)
+- `cssClass` (String): the css class to apply to the tooltip element. By default this is `funky-tt` (defined in `jquery.funkytooltips.css`)
+- `deltaX` and `deltaX` (Number): the offset in px from the cursor position (default 15)
+
 ### Demo
 
-See `demo/index.html` for a practicle examples of how to use it.
+See `demo/index.html` for a practical examples of how to use it.
 
