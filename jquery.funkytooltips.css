@@ -1,0 +1,18 @@
+.funky-tt {
+   padding: 7px 8px;
+   background: #000;
+   color: lime;
+   position: absolute;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+
+.funky-tt span {
+   display: block;
+}
+
+.funky-tt span.location {
+   font-size: 12px;
+   font-family: monospace;
+   color: #fff;
+}
