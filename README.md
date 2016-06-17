@@ -16,15 +16,15 @@ $(".my-text").funkytooltips({
 
 A tooltip will now display when hovering the following tags contained in `.my-text`: 
 
-- `<a />`
-- `<img />`
-- `<acronym />`
+- `<a/>`
+- `<img/>`
+- `<acronym/>`
 
 What each tooltip will display depends on the tag considered:
 
-- `<a />`: the `title` and the `href` attribute
-- `<img />`: the `alt` and the `src` attribute
-- `>acronym />`: the `title` attribute
+- `<a/>`: the `title` and the `href` attribute
+- `<img/>`: the `alt` and the `src` attribute
+- `<acronym/>`: the `title` attribute
 
 ### Config
 
