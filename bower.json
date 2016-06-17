@@ -1,0 +1,6 @@
+{
+  "name": "funkytooltips",
+  "dependencies": {
+    "jquery": "^3.0.0"
+  }
+}

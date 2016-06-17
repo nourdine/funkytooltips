@@ -9,10 +9,10 @@
    var timer = null;
 
    var fly = new function() {
-   
+
       var description = null;
       var location = null;
-      
+
       var el = null;
       var descriptionBox = null;
       var locationBox = null;
@@ -65,7 +65,7 @@
       };
 
       var hash = "id-" + new Date().getTime();
-      
+
       // initialization!
       $("<div id='" + hash + "'><span class='description'></span><span class='location'></span></div>").appendTo("body");
       el = $("#" + hash);
@@ -75,9 +75,9 @@
    };
 
    function getFlyDecorator(settings) {
-      
+
       var deco = {};
-      
+
       deco.setDescription = function(t) {
          fly.setDescription(t);
       };
@@ -89,7 +89,7 @@
       deco.setLocation = function(str) {
          if (str.length > settings.locationLength) {
             str = str.substr(0, settings.locationLength) + "...";
-         }         
+         }
          fly.setLocation(str);
       };
 
@@ -151,6 +151,7 @@
          links.each(function() {
 
             $(this).bind("mouseover", function(e) {
+
                var trg = $(e.target);
                var title = trg.attr("title");
                var href = trg.attr("href");
@@ -186,4 +187,5 @@
          });
       });
    };
+
 })(jQuery);
