@@ -12,10 +12,9 @@
             margin: 0;
          }
 
-         p {
-            width: 450px;
+         div {
+            max-width: 450px;
             padding: 20px;
-            margin: 0;
             font-family: arial;
             font-size: 16px;
             line-height: 24px;
@@ -41,7 +40,7 @@
    </head>
    <body>
 
-      <p>
+      <div>
          Lorem ipsum dolor sit amet, <a href="http://www.google.com" title="This is the tooltip content">Google</a> adipiscing elit, 
          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
          <img src="https://hsto.org/storage2/8c8/2d8/de9/8c82d8de918e7e2dc49c7d2298e34a13.jpg" 
@@ -52,14 +51,16 @@
          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      </div>
 
       <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
       <script type="text/javascript" src="../jquery.funkytooltips.js"></script>
 
       <script type="text/javascript">
 
-         $("p").funkytooltips();
+         $("div").funkytooltips({
+            delay: 2000
+         });
 
       </script>
       
