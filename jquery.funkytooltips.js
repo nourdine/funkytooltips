@@ -1,7 +1,6 @@
 /**
  * funkytooltips jQuery plugin
  *
- * Copyright 2012, Nourdine
  * License GPL http://www.gnu.org/licenses/gpl.html
  */
 (function($) {
@@ -64,11 +63,11 @@
          locationBox.text("");
       };
 
-      var hash = "id-" + new Date().getTime();
+      var uid = "ftt-uid-" + new Date().getTime();
 
-      // initialization!
-      $("<div id='" + hash + "'><span class='description'></span><span class='location'></span></div>").appendTo("body");
-      el = $("#" + hash);
+      // initialization
+      $("<div id='" + uid + "'><span class='description'></span><span class='location'></span></div>").appendTo("body");
+      el = $("#" + uid);
       el.css("display", "none");
       descriptionBox = el.find(".description");
       locationBox = el.find(".location");
@@ -125,7 +124,7 @@
       slideDown: function(el) {
          el.slideDown(300);
       }
-   }
+   };
 
    $.fn.funkytooltips = function(conf) {
 
@@ -146,37 +145,41 @@
       return this.each(function() {
 
          var el = $(this);
-         var links = el.find("a, img");
+         var links = el.find("a, acronym, img");
 
          links.each(function() {
 
             $(this).bind("mouseover", function(e) {
 
                var trg = $(e.target);
-               var title = trg.attr("title");
-               var href = trg.attr("href");
-               var alt = trg.attr("alt");
-               var src = trg.attr("src");
-               if (title && href && href !== "#") {
-                  flyDecorator.setDescription(title);
-                  flyDecorator.setLocation(href);
+               var description, location;
+
+               if (trg.is("a")) {
+                  description = trg.attr("title");
+                  location = trg.attr("href");
                   trg.attr("title", "");
-                  showIt(e, settings, flyDecorator);
-               } else if (alt && src) {
-                  flyDecorator.setDescription(alt);
-                  flyDecorator.setLocation(src);
+               } else if (trg.is("acronym")) {
+                  description = trg.attr("title");
+                  location = "";
+                  trg.attr("title", "");
+               } else if (trg.is("img")) {
+                  description = trg.attr("alt");
+                  location = trg.attr("src");
                   trg.attr("alt", "");
-                  showIt(e, settings, flyDecorator);
                }
+
+               flyDecorator.setDescription(description);
+               flyDecorator.setLocation(location);
+               showIt(e, settings, flyDecorator);
             });
 
             $(this).bind("mouseout", function(e) {
                clearTimeout(timer);
-               var trg = e.target;
-               if (trg.tagName.toLowerCase() === "a") {
-                  $(trg).attr("title", flyDecorator.getDescription());
-               } else if (trg.tagName.toLowerCase() === "img") {
-                  $(trg).attr("alt", flyDecorator.getDescription());
+               var trg = $(e.target);
+               if (trg.is("a, acronym")) {
+                  trg.attr("title", flyDecorator.getDescription());
+               } else if (trg.is("img")) {
+                  trg.attr("alt", flyDecorator.getDescription());
                }
                flyDecorator.getLost();
             });
