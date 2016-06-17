@@ -33,7 +33,7 @@ The tooltips behaviour can be configured passing to the plugin the following bit
 - `delay (Number)`: how many milliseconds before the tooltip appears when the a certain tag is hovered (default `300`)
 - `cssClass (String)`: the css class to apply to the tooltip element. By default this is `funky-tt` (defined in `jquery.funkytooltips.css`)
 - `deltaX and deltaX (Number)`: the offset in px from the cursor position (default `15`)
-- `displayLocation (Boolean)`: Weather or not to display the location of the tooltipped resource (`href` in case of `<a/>` and `src` in case of '<img/>') (default `true`)
+- `displayLocation (Boolean)`: whether or not to display the location of the tooltipped resource (`href` in case of `<a/>` and `src` in case of '<img/>') (default `true`)
 
 ### HTML structure
 
