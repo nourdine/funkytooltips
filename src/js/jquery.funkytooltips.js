@@ -3,7 +3,6 @@ var Tooltip = require("./tooltip");
 var buildDecorator = require("./build-decorator");
 var defaultValues = require("./default-values");
 
-
 $.fn.funkytooltips = function (conf) {
 
    var timer = null;
