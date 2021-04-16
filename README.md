@@ -6,7 +6,7 @@ Funkytooltips is a jQuery plugin to generate tooltips based on the data containe
 
 The plugin can be installed using `npm` and is meant to be used in a project that is built using a bundler like [Webpack](https://webpack.js.org/).
 
-Otherwise, after manually downloading the package, the plugin can be build like so:
+Otherwise, after manually downloading the package, the plugin can be built like so:
 
 ```
 npm i
