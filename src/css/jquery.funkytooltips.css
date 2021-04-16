@@ -1,10 +1,11 @@
 .funky-tt {
-   padding: 7px 8px;
+   font-size: 30px;
+   padding: 15px;
    background: #000;
    color: lime;
    position: absolute;
-   -moz-border-radius: 5px;
-   border-radius: 5px;
+   border-radius: 7px;
+   line-height: 30px;
 }
 
 .funky-tt span {
@@ -12,7 +13,7 @@
 }
 
 .funky-tt span.location {
-   font-size: 12px;
+   font-size: 18px;
    font-family: monospace;
    color: #fff;
 }
