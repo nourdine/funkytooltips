@@ -34,7 +34,13 @@ function buildDecorator(tooltip, settings) {
     };
 
     deco.showUp = function () {
-        tooltip.showUp(showUpStrategies[settings.displayMethod]);
+        var f = showUpStrategies[settings.displayMethod];
+        
+        if (typeof f !== "function") {
+            throw "The specified displayMethod does not exixst";
+        }
+        
+        tooltip.showUp(f);
     };
 
     deco.getLost = function () {

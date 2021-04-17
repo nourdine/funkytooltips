@@ -11,8 +11,6 @@ function Tooltip(cssClass, displayLocation) {
     var descriptionBox = null;
     var locationBox = null;
 
-    var cssClass, displayLocation;
-
     function showLocationBox() {
         locationBox.css("display", "block");
     }
@@ -41,17 +39,7 @@ function Tooltip(cssClass, displayLocation) {
     };
 
     this.showUp = function (show) {
-        el.addClass(cssClass);
-
-        if (displayLocation) {
-            showLocationBox();
-        } else {
-            hideLocationBox();
-        }
-
-        if (typeof show === "function") {
-            show.call(window, el);
-        }
+        show.call(window, el);
     };
 
     this.getLost = function () {
@@ -61,14 +49,20 @@ function Tooltip(cssClass, displayLocation) {
         location = null;
         locationBox.text("");
     };
-    
+
     // initialization
     uid = "ftt-uid-" + new Date().getTime();
     $("<div id='" + uid + "'><span class='description'></span><span class='location'></span></div>").appendTo("body");
     el = $("#" + uid);
     el.css("display", "none");
+    el.addClass(cssClass);
     descriptionBox = el.find(".description");
     locationBox = el.find(".location");
+    if (displayLocation) {
+        showLocationBox();
+    } else {
+        hideLocationBox();
+    }
 };
 
 module.exports = Tooltip;
