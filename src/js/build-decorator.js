@@ -37,7 +37,7 @@ function buildDecorator(tooltip, settings) {
         var f = showUpStrategies[settings.displayMethod];
         
         if (typeof f !== "function") {
-            throw "The specified displayMethod does not exixst";
+            throw "The specified `displayMethod` does not exist";
         }
         
         tooltip.showUp(f);
